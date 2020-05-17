@@ -12,6 +12,11 @@ Widget userProfile() {
               height: 60,
               width: 60,
               decoration: BoxDecoration(
+                image: DecorationImage(
+                image: AssetImage(
+                    'assets/images/myavatar.jpg'),
+                fit: BoxFit.fill,
+              ),
                   border: Border.all(
                       color: Colors.white,
                       width: 1.0,

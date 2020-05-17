@@ -56,7 +56,7 @@ flutter:
 
   assets:
     - assets/videos/Marina.MP4
-    - assets/images/avatar.png
+    - assets/images/myavatar.jpg
 
   fonts:
     - family:  TikTokIcons

@@ -12,7 +12,7 @@ class _AppVideoPlayerState extends State<AppVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset("assets/videos/Marina.MP4")
+    _controller = VideoPlayerController.asset('assets/videos/Marina.MP4')
       ..initialize().then((_) {
         _controller.play();
         setState(() {});
@@ -21,8 +21,11 @@ class _AppVideoPlayerState extends State<AppVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: _controller.value.initialized
+    return Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        Container(
+          child: _controller.value.initialized
           ? AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
               child: VideoPlayer(_controller),
@@ -30,6 +33,8 @@ class _AppVideoPlayerState extends State<AppVideoPlayer> {
           : Container(
               color: Colors.black,
             ),
+        )
+      ],
     );
   }
 
