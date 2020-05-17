@@ -1,0 +1,143 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Fab Menu',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: FlowMenu(),
+    );
+  }
+}
+
+class FlowMenu extends StatefulWidget {
+  @override
+  _FlowMenuState createState() => _FlowMenuState();
+}
+
+class _FlowMenuState extends State<FlowMenu>
+    with SingleTickerProviderStateMixin {
+  AnimationController menuAnimation;
+  IconData lastTapped = Icons.notifications;
+
+  void _updateMenu(IconData icon) {
+    if (icon != Icons.menu) setState(() => lastTapped = icon);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    menuAnimation = AnimationController(
+      duration: const Duration(milliseconds: 250),
+      vsync: this,
+    );
+    menuAnimation.addListener(() {
+      setState(() {});
+    });
+  }
+
+  Widget flowMenuItem(MenuData menuData) {
+    return Row(
+      children: <Widget>[
+        RawMaterialButton(
+          fillColor:
+              lastTapped == menuData.iconData ? Colors.amber[700] : Colors.blue,
+          splashColor: Colors.amber[100],
+          shape: CircleBorder(),
+          onPressed: () {
+            _updateMenu(menuData.iconData);
+            menuAnimation.status == AnimationStatus.completed
+                ? menuAnimation.reverse()
+                : menuAnimation.forward();
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Icon(
+              menuData.iconData,
+              color: Colors.white,
+              size: 45.0,
+            ),
+          ),
+        ),
+        Transform.scale(
+          scale: menuAnimation.value,
+          child: Opacity(
+            opacity: menuAnimation.value,
+            child: Text(menuData.text),
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
+          child: Flow(
+            delegate: FlowMenuDelegate(menuAnimation: menuAnimation),
+            children: menuItems
+                .map<Widget>((MenuData menuData) => flowMenuItem(menuData))
+                .toList(),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class FlowMenuDelegate extends FlowDelegate {
+  FlowMenuDelegate({this.menuAnimation}) : super(repaint: menuAnimation);
+
+  final Animation<double> menuAnimation;
+
+  @override
+  bool shouldRepaint(FlowMenuDelegate oldDelegate) {
+    return menuAnimation != oldDelegate.menuAnimation;
+  }
+
+  @override
+  void paintChildren(FlowPaintingContext context) {
+    double dx = 0.0, dy = 0.0;
+    for (int i = 0; i < context.childCount; ++i) {
+      // dx = context.getChildSize(i).width * i;
+      dx = 200.0 * cos(menuItems[i].angle * (pi / 180));
+      dy = 200.0 * sin(menuItems[i].angle * (pi / 180));
+      context.paintChild(
+        i,
+        transform: Matrix4.translationValues(
+          dx * menuAnimation.value,
+          dy * menuAnimation.value,
+          0,
+        ),
+      );
+    }
+  }
+}
+
+class MenuData {
+  const MenuData({this.iconData, this.text, this.angle});
+
+  final IconData iconData;
+  final String text;
+  final angle;
+}
+
+final List<MenuData> menuItems = <MenuData>[
+  MenuData(iconData: Icons.home, text: "Home", angle: -60),
+  MenuData(iconData: Icons.new_releases, text: "Release", angle: -30),
+  MenuData(iconData: Icons.notifications, text: "Notification", angle: 0),
+  MenuData(iconData: Icons.settings, text: "Settings", angle: 30),
+  MenuData(iconData: Icons.menu, text: "Menu", angle: 60),
+];
+
+
