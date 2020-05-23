@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:navit_app/bottom_nav_bar.dart';
 import 'package:navit_app/pages/home_page.dart';
-//import 'package:navit_app/widgets/home/home_header.dart';
+import 'package:navit_app/pages/search_page.dart';
+import 'package:navit_app/pages/map_page.dart';
+import 'package:navit_app/pages/profile_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,15 +11,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Stack(
-          children: <Widget>[
-            HomeScreen(),
-            //homeHeader(),
-          ],
-        ),
-        floatingActionButton: BottomNavigation(),
-      ),
+      theme: ThemeData(primarySwatch: Colors.red,),
+      home: HomeScreen(),
+      routes: <String, WidgetBuilder>{
+          '/homePage': (BuildContext context) => HomeScreen(),
+          '/searchPage': (BuildContext context) => SearchPage(),
+          '/mapPage': (BuildContext context) => MapPage(),
+          '/profilePage': (BuildContext context) => ProfilePage(),
+      }
     );
   }
 }
+
+// home: Scaffold(
+//         body: FirstScreen(),
+//         floatingActionButton: BottomNavigation(),
+//       ),

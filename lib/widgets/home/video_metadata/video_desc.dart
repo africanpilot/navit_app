@@ -33,7 +33,7 @@ Widget videoDesc() {
         Padding(
           padding: EdgeInsets.only(top: 4, bottom: 7),
           child: Text(
-              "#Cool,#marina,#vibes,#skateboard,#ocean,#location",
+              "#Cool #marina #vibes #skateboard #ocean #location",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,

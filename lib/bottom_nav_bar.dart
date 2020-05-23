@@ -8,43 +8,63 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigation extends State<BottomNavigation> {
 
-  @override
-    Widget build(BuildContext context) {
-      return 
+  Widget build(BuildContext context) {
+    var childButtons = List<UnicornButton>();
+
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Home",
+        currentButton: FloatingActionButton(
+          heroTag: "home",
+          backgroundColor: Colors.redAccent,
+          mini: true,
+          child: Icon(Icons.home),
+          onPressed: () {Navigator.pushNamed(context, "/homePage");},
+        )));
+
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Search",
+        currentButton: FloatingActionButton(
+          heroTag: "search",
+          backgroundColor: Colors.redAccent,
+          mini: true,
+          child: Icon(Icons.search),
+          onPressed: () {Navigator.pushNamed(context, "/searchPage");},
+        )));
+        
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Map",
+        currentButton: FloatingActionButton(
+          heroTag: "map",
+          backgroundColor: Colors.redAccent,
+          mini: true,
+          child: Icon(Icons.location_searching),
+          onPressed: () {Navigator.pushNamed(context, "/mapPage");},
+        )));
+
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Profile",
+        currentButton: FloatingActionButton(
+          heroTag: "profile",
+          backgroundColor: Colors.redAccent,
+          mini: true,
+          child: Icon(Icons.person),
+          onPressed: () {Navigator.pushNamed(context, "/profilePage");},
+        )));
+
+
+    return 
         UnicornDialer(
-          parentButtonBackground: Colors.grey[700],
-          orientation: UnicornOrientation.VERTICAL,
-          parentButton: Icon(Icons.person),
-          childButtons: _getProfileMenu(),
-          hasBackground: false,
-        );
-    }
-}
-
-List<UnicornButton> _getProfileMenu() {
-  List<UnicornButton> children = [];
-
-  // Add Children here
-  children.add(_profileOption(iconData: Icons.home, text: 'home',onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.search, text: 'search',onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.location_searching, text: 'location', onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.people, text: 'community', onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.local_dining, text: 'dining', onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.local_activity, text: 'sites', onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.local_bar, text: 'nite Life', onPressed:() {}));
-  children.add(_profileOption(iconData: Icons.settings, text: 'settings', onPressed: (){}));
-   
-  return children;
-}
-
-
-Widget _profileOption({IconData iconData, Function onPressed, String text}) {
-  return UnicornButton(
-    currentButton: FloatingActionButton(
-    backgroundColor: Colors.grey[500],
-    mini: true,
-    child: Icon(iconData),
-    onPressed: onPressed,
-    tooltip: text,
-  ));
+            backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
+            parentButtonBackground: Colors.redAccent,
+            orientation: UnicornOrientation.VERTICAL,
+            parentButton: Icon(Icons.menu),
+            childButtons: childButtons,
+            hasBackground: false,
+            );
+       
+  }
 }
