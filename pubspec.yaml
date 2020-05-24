@@ -33,7 +33,12 @@ dependencies:
   cached_network_image: 0.7.0
   http: ^0.12.0+2
   unicorndial: ^1.1.5
-  google_maps_flutter: ^0.5.28+1
+  # google_maps_flutter: ^0.5.28+1
+  google_maps_flutter_heatmap: ^0.1.1+1
+  font_awesome_flutter: ^8.2.0
+  # flutter_google_places: ^0.2.5
+  # location: ^3.0.2
+  # search_map_place: ^0.3.0
 
 dev_dependencies:
   flutter_test:

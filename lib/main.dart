@@ -23,7 +23,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// home: Scaffold(
-//         body: FirstScreen(),
-//         floatingActionButton: BottomNavigation(),
-//       ),
