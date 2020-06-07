@@ -48,13 +48,13 @@ Widget videoDesc() {
                   child: userProfile()),
                 Padding(
                   padding: EdgeInsets.only(top: 2, bottom: 1, left: 20),
-                  child: videoControlAction(icon: AppIcons.heart, label: "17.8k")),
+                  child: videoControlAction(icon: AppIcons.heart, label: "17.8k", iconcolor: Colors.white,)),
                 Padding(
                   padding: EdgeInsets.only(top: 2, bottom: 1, left: 20),
-                  child: videoControlAction(icon: AppIcons.chat_bubble, label: "130")),
+                  child: videoControlAction(icon: AppIcons.chat_bubble, label: "130", iconcolor: Colors.white,)),
                 Padding(
                   padding: EdgeInsets.only(top: 2, bottom: 1, left: 20),
-                  child: videoControlAction(icon: AppIcons.reply, label: "Share", size: 27)),
+                  child: videoControlAction(icon: AppIcons.reply, label: "Share", size: 27, iconcolor: Colors.white,)),
               ],
           ),
         ),

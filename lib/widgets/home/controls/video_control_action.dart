@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:navit_app/resources/dimen.dart';
 
-Widget videoControlAction({IconData icon, String label, double size = 35}) {
+Widget videoControlAction({IconData icon, String label, double size = 35,  iconcolor, }) {
   return Padding(
     padding: EdgeInsets.only(top: 10, bottom: 10),
     child: Column(
       children: <Widget>[
         Icon(
           icon,
-          color: Colors.white,
+          color: iconcolor,
           size: size,
         ),
         Padding(
@@ -16,7 +16,7 @@ Widget videoControlAction({IconData icon, String label, double size = 35}) {
               top: Dimen.defaultTextSpacing, bottom: Dimen.defaultTextSpacing),
           child: Text(
             label ?? "",
-            style: TextStyle(fontSize: 10, color: Colors.white),
+            style: TextStyle(fontSize: 10, color: iconcolor),
           ),
         )
       ],

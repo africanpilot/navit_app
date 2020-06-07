@@ -63,11 +63,24 @@ flutter:
   assets:
     - assets/videos/Marina.MP4
     - assets/images/myavatar.jpg
+    - assets/images/beach1.jpg
+    - assets/images/beach2.jpg
+    - assets/images/beach3.jpg
+    - assets/images/speechbubble.png
+    - assets/images/navarrow.png
+    - assets/images/chatbubble.png
+    - assets/images/fav.png
 
   fonts:
     - family:  TikTokIcons
       fonts:
         - asset: assets/fonts/TikTokIcons.ttf
+
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
