@@ -39,6 +39,7 @@ dependencies:
   # flutter_google_places: ^0.2.5
   # location: ^3.0.2
   # search_map_place: ^0.3.0
+  inview_notifier_list: ^1.0.0
 
 dev_dependencies:
   flutter_test:
