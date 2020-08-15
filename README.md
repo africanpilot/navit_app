@@ -24,6 +24,8 @@ The project concept is a video sharing app that is capable of showing the positi
 
 ## Usage
 
+Note: I have not done any testing on IOS 
+
 Get an API key at <https://cloud.google.com/maps-platform/>.
 
 ### Android
