@@ -10,7 +10,7 @@
         android:label="navit_app"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyDKLRhZoxj4AZIlZjK9nN8TU9CYtPxLzhw"/>
+               android:value=""/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
