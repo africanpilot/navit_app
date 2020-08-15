@@ -8,6 +8,8 @@ The project concept is a video sharing app that is capable of showing the positi
 
 ![Navit App](assets/images/HomePage.PNG?raw=true 'Navit App HomePage')
 ![Navit App](assets/images/SearchPage.PNG?raw=true 'Navit App SearchPage')
+![Navit App](assets/images/MapPage.PNG?raw=true 'Navit App MapPage')
+![Navit App](assets/images/ProfilePage.PNG?raw=true 'Navit App ProfilePage')
 
 ## Quick Start
 
