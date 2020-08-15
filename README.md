@@ -22,6 +22,21 @@ The project concept is a video sharing app that is capable of showing the positi
   flutter run
 ```
 
+## Usage
+
+Get an API key at <https://cloud.google.com/maps-platform/>.
+
+### Android
+
+Specify your API key in the application manifest `android/app/src/main/AndroidManifest.xml`:
+
+```xml
+<manifest ...
+  <application ...
+    <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="YOUR KEY HERE"/>
+```
+
 ## Preview
 
 ![Navit App](assets/images/HomePage.PNG?raw=true 'Navit App HomePage')
