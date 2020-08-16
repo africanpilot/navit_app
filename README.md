@@ -46,6 +46,12 @@ Specify your API key in the application manifest `android/app/src/main/AndroidMa
 ![Navit App](assets/images/MapPage.PNG?raw=true 'Navit App MapPage')
 ![Navit App](assets/images/ProfilePage.PNG?raw=true 'Navit App ProfilePage')
 
-
-
-
+## To do list:
+- [x] fullscrren video for homepage
+- [x] connect to google map api
+- [x] add heatmap
+- [x] create search page
+- [x] create profile page
+- [ ] connect to db
+- [ ] separate advertisement vs. community review videos
+- [ ] add draw polygon to maps
