@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The project concept is a video sharing app that is capable of showing the positive and negative reviews of places, cities, and neighborhoods through the eyes of the community. Not all places that advertise their locations are honest, therefore the aim here is to balance out the playing field where both sides are explored through video.
+The project was to understand and try out the flutter mobile app framework.
 
 ## Quick Start
 
